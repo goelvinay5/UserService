@@ -90,24 +90,14 @@ public class SecurityConfig {
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
             throws Exception {
         http
-                .authorizeHttpRequests((authorize) -> {
-                            try {
-                                authorize
-//                                        .anyRequest().authenticated()
-                                        .anyRequest().permitAll()
-                                        .and().cors().disable()
-                                        .csrf().disable();
-                            } catch (Exception e) {
-                                throw new RuntimeException(e);
-                            }
-                        }
-                )
-                // Form login handles the redirect to the login page from the
-                // authorization server filter chain
-                .formLogin(Customizer.withDefaults());
+            .authorizeHttpRequests(auth -> auth.anyRequest().permitAll()) // Allow all requests
+                .cors(cors -> cors.disable()) // Disable CORS (if not needed)
+                .csrf(csrf -> csrf.disable()) // Disable CSRF
+                .formLogin(Customizer.withDefaults()); // Default form login
 
         return http.build();
     }
+
 
 //    @Bean
 //    public UserDetailsService userDetailsService() {
