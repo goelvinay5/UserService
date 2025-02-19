@@ -5,7 +5,7 @@
     <persistence-units>
       <persistence-unit name="Default">
         <packages>
-          <package value="org.example.account_service" />
+          <package value="org.example.userservice" />
         </packages>
       </persistence-unit>
     </persistence-units>
