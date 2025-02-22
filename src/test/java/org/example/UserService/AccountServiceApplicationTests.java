@@ -1,6 +1,6 @@
-package org.example.UserService;
+package org.woolf.UserService;
 
-import org.example.UserService.security.services.JpaRegisteredClientRepository;
+import org.woolf.UserService.security.services.JpaRegisteredClientRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
