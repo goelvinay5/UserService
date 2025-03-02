@@ -2,10 +2,7 @@ package org.woolf.UserService.security.models;
 
 import java.time.Instant;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "`client`")
@@ -18,18 +15,25 @@ public class Client {
     private Instant clientSecretExpiresAt;
     private String clientName;
     @Column(length = 1000)
+    @Lob
     private String clientAuthenticationMethods;
     @Column(length = 1000)
+    @Lob
     private String authorizationGrantTypes;
     @Column(length = 1000)
+    @Lob
     private String redirectUris;
     @Column(length = 1000)
+    @Lob
     private String postLogoutRedirectUris;
     @Column(length = 1000)
+    @Lob
     private String scopes;
     @Column(length = 2000)
+    @Lob
     private String clientSettings;
     @Column(length = 2000)
+    @Lob
     private String tokenSettings;
 
     public String getId() {

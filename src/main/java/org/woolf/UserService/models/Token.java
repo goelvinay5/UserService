@@ -1,6 +1,7 @@
 package org.woolf.UserService.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,8 +12,9 @@ import java.util.Date;
 @Setter
 @Entity
 public class Token extends BaseModel {
-    private String value;
+    private String tokenValue;
     @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
-    private Date expiryAt;
+    private Date expiryDate;
 }

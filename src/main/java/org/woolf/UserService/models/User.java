@@ -15,5 +15,10 @@ public class User extends BaseModel {
     private String hashedPassword;
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
-    private Boolean verified;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id",  referencedColumnName = "id")
+    private Address address;
+    private String resetPasswordQuestion;
+    private String resetPasswordAnswer;
 }
