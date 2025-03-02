@@ -1,4 +1,5 @@
 package org.woolf.UserService.security.models;
+
 import java.io.Serializable;
 import java.util.Objects;
 

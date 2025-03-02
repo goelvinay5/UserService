@@ -2,7 +2,6 @@ package org.woolf.UserService.security.repositories;
 
 import java.util.Optional;
 
-
 import org.woolf.UserService.security.models.Authorization;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
